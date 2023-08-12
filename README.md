@@ -1,4 +1,4 @@
-<h3>vision.AI</h3> 
+<h3>vision.AI</h3><p>The ultimate ecosystem of apps, plugins & resources for all creators, powered by artificial intelligence.</p>
 
 <p>In this project, we are building a web application that allows users to upload images and apply various processing techniques using the ClipDrop API. The main features of the application include:<br></p>
 
