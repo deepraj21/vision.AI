@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vision.AI</title>
+    <link rel="icon" href="https://cdn3d.iconscout.com/3d/premium/thumb/ai-vision-6953862-5701061.png" type="image/png">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            /* background-color: #f8f9fa; */
+            background: #01012a;
+            font-family: monospace;
+    
+        }
+    
+        h1
+        {
+            color: aliceblue;
+            text-align: center;
+        }
+        h3{
+            color:aliceblue
+        }
+        p{
+            color: aliceblue;
+        }
+    
+        label {
+            color: aliceblue;
+            text-align: center;
+        }
+    
+        .container {
+            margin-top: 50px;
+        }
+    
+        .custom-upload-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        .custom-upload-btn:hover {
+            background-color: #0056b3;
+        }
+    
+        /* Custom styling for file input */
+        .custom-file-input {
+            visibility: hidden;
+            width: 0;
+            position: absolute;
+        }
+    
+        .custom-file-label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        .custom-file-input:focus+.custom-file-label {
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+    
+        .depth-map-img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h1 class="container">Inpainting</h1>
+    <h3>Requirement :</h3>
+    <p>Image_file is the original image to process.<br>
+    The original image should be a JPG or a PNG, with a maximum resolution of 16 megapixels and a max file size of 30 Mb.
+    mask_file is the mask image, defining the areas that need to be removed.
+    The mask image should be a PNG, and should have the same resolution as the original image and a max file size of 30 Mb.
+    <br>The mask should be black and white with no grey pixels (e.g. values of only 0 or 255), the value of 0 indicating a pixel
+    to keep as is and 255 a pixel to 'clean up'.</p>
+    <form action="/inpainting" method="POST" enctype="multipart/form-data">
+        <label>Image_file {Select an image (JPEG,JPG only):}</label><br>
+        <input type="file" name="image" accept=".jpg, .jpeg"><br><br>
+        <label>mask_file {Select an image (PNG only):}</label><br>
+        <input type="file" name="mask" accept=".png"><br><br>
+        <button class="btn custom-upload-btn" type="submit">Upload and Process</button>
+    </form>
+    {% if inpainted_image_filename %}
+    <h2>Inpainted Image</h2>
+    <img class="image_upsclae_img" src="{{ url_for('static', filename=inpainted_image_filename) }}" alt="Inpainted Image">
+    {% endif %}
+    </div>
+</body>
+
+</html>

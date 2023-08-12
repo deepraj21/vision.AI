@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>vision.AI</title>
+
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <link rel="icon" href="https://cdn3d.iconscout.com/3d/premium/thumb/ai-vision-6953862-5701061.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            font-family: monospace;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .site-footer {
+            /* background-color: #26272b; */
+            padding: 45px 0 20px;
+            font-size: 15px;
+            line-height: 24px;
+            color: #737373;
+        }
+
+        .site-footer hr {
+            border-top-color: #bbb;
+            opacity: 0.5
+        }
+
+        .site-footer hr.small {
+            margin: 20px 0
+        }
+
+        .site-footer h6 {
+            color: #fff;
+            font-size: 16px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            letter-spacing: 2px
+        }
+
+        .site-footer a {
+            color: #737373;
+        }
+
+        .site-footer a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            padding-left: 0;
+            list-style: none
+        }
+
+        .footer-links li {
+            display: block
+        }
+
+        .footer-links a {
+            color: #737373
+        }
+
+        .footer-links a:active,
+        .footer-links a:focus,
+        .footer-links a:hover {
+            color: #3366cc;
+            text-decoration: none;
+        }
+
+        .footer-links.inline li {
+            display: inline-block
+        }
+
+        .site-footer .social-icons {
+            text-align: right
+        }
+
+        .site-footer .social-icons a {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            margin-left: 6px;
+            margin-right: 0;
+            border-radius: 100%;
+            background-color: #33353d
+        }
+
+        .copyright-text {
+            margin: 0
+        }
+
+        @media (max-width:991px) {
+            .site-footer [class^=col-] {
+                margin-bottom: 30px
+            }
+        }
+
+        @media (max-width:767px) {
+            .site-footer {
+                padding-bottom: 0
+            }
+
+            .site-footer .copyright-text,
+            .site-footer .social-icons {
+                text-align: center
+            }
+        }
+
+        .social-icons {
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-bottom: 4px
+        }
+
+        .social-icons li.title {
+            margin-right: 15px;
+            text-transform: uppercase;
+            color: #96a2b2;
+            font-weight: 700;
+            font-size: 13px
+        }
+
+        .social-icons a {
+            background-color: #eceeef;
+            color: #818a91;
+            font-size: 16px;
+            display: inline-block;
+            line-height: 44px;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            margin-right: 8px;
+            border-radius: 100%;
+            -webkit-transition: all .2s linear;
+            -o-transition: all .2s linear;
+            transition: all .2s linear
+        }
+
+        .social-icons a:active,
+        .social-icons a:focus,
+        .social-icons a:hover {
+            color: #fff;
+            background-color: #29aafe
+        }
+
+        .social-icons.size-sm a {
+            line-height: 34px;
+            height: 34px;
+            width: 34px;
+            font-size: 14px
+        }
+
+        .social-icons a.facebook:hover {
+            background-color: #3b5998
+        }
+
+        .social-icons a.twitter:hover {
+            background-color: #00aced
+        }
+
+        .social-icons a.linkedin:hover {
+            background-color: #007bb6
+        }
+
+        .social-icons a.dribbble:hover {
+            background-color: #ea4c89
+        }
+
+        @media (max-width:767px) {
+            .social-icons li.title {
+                display: block;
+                margin-right: 0;
+                font-weight: 600
+            }
+        }
+    </style>
+</head>
+
+<body class="container">
+    <h1 class="title-main">Welcome to vision.AI Dashboard</h1>
+    <h2>CREATE STUNNING VISUALS
+    </h2>
+    <h2 style="color: rgb(228, 57, 91);">
+        IN SECONDS</h2>
+    </h2><br>
+    <p style="text-align: center;">The ultimate ecosystem of apps, plugins & resources for all creators,
+        powered by artificial intelligence.</p><br><br>
+    <h1 class="title-main">TOOLS</h1>
+    <section class="example">
+
+        <div class="container-card">
+
+            <div class="card">
+                <div class="card-content">
+                    <a href="{{url_for('inpainting')}}">
+                        <h2>Inpainting</h2>
+                    </a>
+                    <p>
+                        Too many photos contain unwanted objects, text, or persons. Now, you can simply remove all these
+                        flaws with Cleanup API.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <a href="{{url_for('remove_background')}}">
+                        <h2>Remove Background</h2>
+                    </a>
+                    <p>
+                        You can quickly remove the background of any image with incredible accuracy
+                        without having to do a bunch of extra work!
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <a href="{{url_for('imageUpscale')}}">
+                        <h2>Image upscaling</h2>
+                    </a>
+                    <p>
+                        Transform your low resolution image into an ultra sharp high resolution image.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <a href="{{url_for('textImage')}}">
+                        <h2>Text to Image</h2>
+                    </a>
+                    <p>
+                        Our implementation has been heavily optimized for extreme
+                        speed and provides high-quality images from text.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <a href="{{url_for('depthImage')}}">
+                        <h2>Portrait Depth Estimation</h2>
+                    </a>
+                    <p>In photography, one of the most important factors to consider is depth.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <a href="{{url_for('normalImage')}}">
+                        <h2>Portrait Surface Normals</h2>
+                    </a>
+                    <p>Without surface normals, things can look very flat and unrealistic. </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <a href="{{url_for('reimagine')}}">
+                        <h2>Reimagine</h2>
+                    </a>
+                    <p>Reimagine and view your images differently with the Reimagine API.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <a href="{{url_for('sketchToImage')}}">
+                        <h2>Sketch to image</h2>
+                    </a>
+                    <p>The sketch to image API endpoint allows you to generate an image corresponding to a sketch and a
+                        prompt describing what
+                        you expect.</p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+    <hr>
+
+    <!-- Site footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <h6>About</h6><br>
+                    <p class="text-justify">In this project, we are building a web application that allows users to
+                        upload images and apply various processing
+                        techniques using the ClipDrop API. The main features of the application include:<br><br>
+
+                        1. <i><b>Image Upload</b></i>: Users can upload images in JPEG or JPG format. They have the
+                        option to either select an image using
+                        the traditional file input or drag and drop the image onto a designated drop zone.<br><br>
+
+                        2. <i><b>Processing Options</b></i> The application provides multiple processing options:<br>
+                        - Inpainting<br>
+                        - Reimagine<br>
+                        - Sketch to image<br>
+                        - Remove Background<br>
+                        - Image upscaling<br>
+                        - Text to Image<br>
+                        - Portrait Depth Estimation<br>
+                        - Portrait Surface Normals<br><br>
+
+                        3. <i><b>API Integration</b></i>: The application uses the ClipDrop API to perform image
+                        processing tasks. It communicates with
+                        the API to send images, receive processed images, and handle errors.<br><br>
+
+                        4. <i><b>Displaying Results</b></i>: After processing an image, the application displays the
+                        processed result on the same page.
+                        Users can see the depth map, normal map, or text-generated image depending on the processing
+                        option chosen.<br><br>
+
+                        5. <i><b>Styling and Layout</b></i>: The user interface is designed with a modern and
+                        user-friendly approach. It incorporates
+                        responsive design using Bootstrap, ensuring that the application looks good and functions well
+                        on various screen sizes.<br><br>
+
+                        6. <i><b>Error Handling</b></i>: The application handles errors that may occur during image
+                        processing or API interactions,
+                        providing feedback to the user if something goes wrong.<br><br>
+
+                        7. <i><b>File Management</b></i>: The uploaded images and processed results are saved in the
+                        `static` folder of the application,
+                        allowing users to download them.<br><br>
+
+                        By combining Flask for backend functionality, HTML for front-end structure, and CSS for styling,
+                        we create a complete
+                        web application that offers image processing capabilities through the ClipDrop API. Users can
+                        easily upload images,
+                        choose processing options, view results, and download the processed images.</p><br>
+                </div>
+            </div>
+            <hr><br>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2023 made with ❤️
+                        <a href="#">vision.AI</a>.
+                    </p>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <ul class="social-icons">
+                        <!-- <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li> -->
+                        <li><a class="twitter" href="https://github.com/deepraj21"><i class="fa fa-github"></i></a></li>
+                        <li><a class="dribbble" href="https://www.instagram.com/its_deep.raj/"><i class="fa fa-instagram"></i></a></li>
+                        <li><a class="linkedin" href="https://www.linkedin.com/in/deepraj-bera-b64996231"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

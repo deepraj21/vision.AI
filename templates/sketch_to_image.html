@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vision.AI</title>
+    <link rel="icon" href="https://cdn3d.iconscout.com/3d/premium/thumb/ai-vision-6953862-5701061.png" type="image/png">
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            /* background-color: #f8f9fa; */
+            background: #01012a;
+            font-family: monospace;
+    
+        }
+    
+        h1
+        {
+            color: aliceblue;
+            text-align: center;
+        }
+        h3{
+            color:aliceblue
+        }
+        p{
+            color: aliceblue;
+        }
+    
+        label {
+            color: aliceblue;
+            text-align: center;
+        }
+    
+        .container {
+            margin-top: 50px;
+        }
+    
+        .custom-upload-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        .custom-upload-btn:hover {
+            background-color: #0056b3;
+        }
+    
+        /* Custom styling for file input */
+        .custom-file-input {
+            visibility: hidden;
+            width: 0;
+            position: absolute;
+        }
+    
+        .custom-file-label {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    
+        .custom-file-input:focus+.custom-file-label {
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+    
+        .depth-map-img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Sketch to Image</h1>
+    <h3>Requirement :</h3>
+    <p>A required sketch_file is the sketch you wish to use to guide the generation.<br>
+    The sketch should be black sketch lines on a white background in a PNG, JPEG or WebP file, with a maximum width and
+    height of 1024 pixels. Fow now, only square images are supported.<br>
+    A required prompt text field describing the content to generate.
+    Maximum length of 5000 characters.</p>
+    <form action="/sketch_to_image" method="POST" enctype="multipart/form-data">
+        <label for="image">Select an image (JPEG,JPG only):</label><br>
+        <input type="file" name="image" accept=".jpg, .jpeg"><br><br>
+        <label for="image">Write the Prompt :</label>
+        <input type="text" name="prompt" placeholder="Enter a prompt"><br><br>
+        <button class="btn custom-upload-btn" type="submit">Upload and Generate</button>
+    </form>
+    {% if sketch_to_image_filename %}
+    <h2>Generated Image from Sketch</h2>
+    <img src="{{ url_for('static', filename=sketch_to_image_filename) }}" alt="Generated Image">
+    {% endif %}
+    </div>
+</body>
+
+</html>

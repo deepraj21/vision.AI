@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vision.AI</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis:200">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="https://cdn3d.iconscout.com/3d/premium/thumb/ai-vision-6953862-5701061.png" type="image/png">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script> -->
+    <style>
+        body {
+            font-family: monospace;
+
+        }
+
+        h1 {
+            /* text-align: center; */
+            /* color: aliceblue; */
+            font-size: 60px;
+        }
+        p{
+            color: aliceblue;
+            font-size: 20px;
+        }
+        :root {
+            --clr-neon: hsl(317 100% 54%);
+            --clr-bg: hsl(323 21% 16%);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        .feature{
+            color: floralwhite;
+        }
+        
+
+        .neon-button {
+            font-size: 2rem;
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--clr-neon);
+            border: var(--clr-neon) 0.125em solid;
+            padding: 0.25em 1em;
+            border-radius: 0.25em;
+            text-shadow: 0 0 0.125em rgba(255, 255, 255, 0.3), 0 0 0.45em currentColor;
+            box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+            position: relative;
+        }
+
+        .neon-button::before {
+            pointer-events: none;
+            content: "";
+            position: absolute;
+            background:whitesmoke;
+            top: 120%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+            filter: blur(1em);
+            opacity: 0.7;
+        }
+
+        .neon-button::after {
+            content: "";
+            /* color: aliceblue; */
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 0 2em 0.5em var(--clr-neon);
+            opacity: 0;
+            background-color: var(--clr-neon);
+            z-index: -1;
+            transition: opacity 100ms linear;
+        }
+
+        .neon-button:hover,
+        .neon-button:focus {
+            color:  hsl(317 100% 54%);
+            text-shadow: none;
+        }
+
+        .neon-button:hover::before,
+        .neon-button:focus::before {
+            opacity: 1;
+        }
+
+        .neon-button:hover::after,
+        .neon-button:focus::after {
+            opacity: 1;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="loading">
+        <div class="loading-container">
+            <p class="counter"></p>
+            <div class="line"></div>
+        </div>
+    </div>
+    <div class="body-container">
+       
+        <div class="box">
+            <img src="static/images/ai-vision-6953862-5701061.webp" height="50px">
+            <h1 >vision.AI</h1>
+            <h3>FEATURES :</h3>
+            <p>Inpainting</p>
+            <p>Reimagine</p>
+            <p>Sketch to image</p>
+            <p>Remove Background</p>
+            <p>Image upscaling</p>
+            <p>Text to Image</p>
+            <p>Portrait Depth Estimation</p>
+            <p>Portrait Surface Normals</p>
+        </div>
+    </div>
+    <center><a href="{{url_for('dashboard')}}" class="neon-button">EXPLORE</a></center>
+    
+
+
+    <script src="static/js/main.js"></script>
+</body>
+
+</html>
