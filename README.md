@@ -31,6 +31,6 @@ easily upload images,choose processing options, view results, and download the p
 
 ### Website Preview 
 
-<img src="template_img/img1">
-<img src="template_img/img2">
-<img src="template_img/img3">
+<img src="template_img/img1.png">
+<img src="template_img/img2.png">
+<img src="template_img/img3.png">
