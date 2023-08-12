@@ -1,4 +1,5 @@
-<h3>vision.AI</h3><p>The ultimate ecosystem of apps, plugins & resources for all creators, powered by artificial intelligence.</p>
+### vision.AI 
+<p>The ultimate ecosystem of apps, plugins & resources for all creators, powered by artificial intelligence.</p>
 
 <p>In this project, we are building a web application that allows users to upload images and apply various processing techniques using the ClipDrop API. The main features of the application include:<br></p>
 
@@ -27,4 +28,9 @@ on various screen sizes.<br>
 
 <p>By combining Flask for backend functionality, HTML for front-end structure, and CSS for styling,we create a complete web application that offers image processing capabilities through the ClipDrop API. Users can
 easily upload images,choose processing options, view results, and download the processed images.</p><br>
-              
+
+### Website Preview 
+
+<img src="template_img/img1">
+<img src="template_img/img2">
+<img src="template_img/img3">
