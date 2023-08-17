@@ -8,7 +8,7 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
-API_KEY = '581600d1f0720d89963f071cee7a946f7fe6dfd6f73f533ae1aa055600598da7ab3e2531df6c4353fa92610beef6edfc'
+API_KEY = 'YOUR_API_KEY'
 
 def process_image_depth(filename, image_file_object):
     r = requests.post('https://clipdrop-api.co/portrait-depth-estimation/v1',
