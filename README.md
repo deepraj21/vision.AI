@@ -34,3 +34,16 @@ easily upload images,choose processing options, view results, and download the p
 <img src="template_img/img1.png">
 <img src="template_img/img2.png">
 <img src="template_img/img3.png">
+
+### How to Use :
+
+⚠️CLIPDROP API is only for Development. It will not work in Production.⚠️
+
+```
+git clone https://github.com/deepraj21/vision.AI
+```
+```
+cd vision.AI
+pip install -r requirements.txt
+flask run
+```
