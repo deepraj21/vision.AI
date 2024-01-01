@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>vision.AI</title>
+
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="icon" href="../static/images/eye-solid.svg">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/sheryjs/dist/Shery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .home .content #home-btn {
+
+            padding: .8vw 3vw;
+            font-size: 3vw;
+            font-family: "Kajiro";
+            margin-top: 2vw;
+            margin-right: 50%;
+            background: white;
+            color: rgb(0, 0, 0);
+        }
+
+        .about .row .image img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+
+
+</head>
+
+<body class="container">
+    <header class="header">
+        <a href="" class="logo"><i class="fa-solid fa-eye"></i> vision.AI</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#services">Tools</a>
+            <a href="#Desc">Project</a>
+            <a href="#about">About</a>
+            {% if username %}
+            <a href="{{url_for('logout')}}">Logout</a>
+            {% else %}
+            <a href="{{url_for('login')}}">Login</a>
+            {% endif %}
+            <!-- <a href=""><span class="fas fa-user"></span></a> -->
+
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+    <section class="home" id="home">
+        <div class="image" id="image" style="width: 600px;border-radius: 1.8rem;">
+            <img src="../static/images/8machine-_-YlgROY6ieIk-unsplash.jpg" alt=""
+                style="border-radius: 1.8rem; width: 600px;">
+            <img src="../static/images/gabriella-clare-marino-2PV6wdWVAMM-unsplash (1).jpg" alt=""
+                style="border-radius: 1.8rem; width: 600px;">
+            <img src="../static/images/xu-haiwei-fv1EFjgIb94-unsplash.jpg" alt=""
+                style="border-radius: 1.8rem; width: 600px;">
+
+
+        </div>
+        <div class="content">
+            {% if username %}
+            
+                <h3 style="text-align: right ; font-size: 6rem; margin-top: -10px;"><a href=""><span style="color: white;"
+                            class="fas fa-user"></span></a> {{ username }}</h3>
+           
+            {% endif %}
+            <h3 style="text-align: right ; font-size: 2.5rem;">Welcome to <span
+                    style="font-size: 7rem; color: rgb(232, 145, 47);;">vision.AI</span> Dashboard</h3>
+            <h3 style="text-align: right; line-height: 0.9;font-size: 4rem;">CREATE STUNNING VISUALS</h3>
+            <h3 style="text-align: right; line-height: .9;font-size: 4rem;">IN SECONDS</h3>
+            <!-- <h3>stay healthy</h3> -->
+            <p style="text-align: right;">The ultimate ecosystem of apps, plugins & resources for all creators,
+                powered by artificial intelligence.</p>
+            <!-- <div style="float: left;"></div> -->
+            <div style="float: right;">
+                <a href="#services" id="home-btn">Explore</a>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="services" id="services">
+        <h1 class="heading">TOOLS</h1>
+        <div class="box-container">
+            <div class="glass-box">
+                <a href="{{url_for('inpainting')}}">
+                    <h3>Inpainting</h3>
+                </a>
+
+                <p>Too many photos contain unwanted objects, text, or persons. Now, you can simply remove all these
+                    flaws with Cleanup API.</p>
+            </div>
+            <div class="glass-box">
+                <a href="{{url_for('remove_background')}}">
+                    <h3>Remove Background</h3>
+
+                </a>
+                <p>You can quickly remove the background of any image with incredible accuracy
+                    without having to do a bunch of extra work!</p>
+            </div>
+            <div class="glass-box">
+                <a href="{{url_for('imageUpscale')}}">
+                    <h3>Image upscaling</h3>
+
+                </a>
+                <p>Transform your low resolution image into an ultra sharp high resolution image.</p>
+            </div>
+            <div class="glass-box">
+                <!-- <i class="fas fa-pills"></i> -->
+                <a href="{{url_for('textImage')}}">
+                    <h3>Text to Image</h3>
+                </a>
+
+                <p>Our implementation has been heavily optimized for extreme
+                    speed and provides high-quality images from text.</p>
+                <!-- <a href="" class="btn"> learn more <span class="fas fa-chevron-right"></span></a> -->
+            </div>
+            <div class="glass-box">
+                <!-- <i class="fas fa-procedures"></i> -->
+                <a href="{{url_for('depthImage')}}">
+                    <h3>Portrait Depth Estimation</h3>
+                </a>
+
+                <p>In photography, one of the most important factors to consider is depth.</p>
+                <!-- <a href="" class="btn"> learn more <span class="fas fa-chevron-right"></span></a> -->
+            </div>
+            <div class="glass-box">
+                <a href="{{url_for('normalImage')}}">
+                    <h3>Portrait Surface Normals</h3>
+                </a>
+                <p>Without surface normals, things can look very flat and unrealistic.</p>
+            </div>
+            <div class="glass-box">
+                <a href="{{url_for('reimagine')}}">
+                    <h3>Reimagine</h3>
+                </a>
+                <p>Reimagine and view your images differently with the Reimagine API.</p>
+            </div>
+            <div class="glass-box">
+                <a href="{{url_for('sketchToImage')}}">
+                    <h3>Sketch to image</h3>
+                </a>
+                <p>The sketch to image API endpoint allows you to generate an image corresponding to a sketch and a
+                    prompt describing what
+                    you expect.</p>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="Desc" style="background:black;  background-size: cover;
+      /* background-position: center; */
+      background-repeat: no-repeat;
+      background-attachment: fixed;">
+        <h1 class="heading">Project Description</h1>
+        <div class="row">
+            <div class="content">
+                <h3></h3>
+                <p class="text-justify">In this project, we are building a web application that allows users to
+                    upload images and apply various processing
+                    techniques using the ClipDrop API. The main features of the application include:<br><br>
+
+                    1. <i><b>Image Upload</b></i>: Users can upload images in JPEG or JPG format. They have the
+                    option to either select an image using
+                    the traditional file input or drag and drop the image onto a designated drop zone.<br><br>
+
+                    2. <i><b>Processing Options</b></i> The application provides multiple processing options:<br>
+                    - Inpainting<br>
+                    - Reimagine<br>
+                    - Sketch to image<br>
+                    - Remove Background<br>
+                    - Image upscaling<br>
+                    - Text to Image<br>
+                    - Portrait Depth Estimation<br>
+                    - Portrait Surface Normals<br><br>
+
+                    3. <i><b>API Integration</b></i>: The application uses the ClipDrop API to perform image
+                    processing tasks. It communicates with
+                    the API to send images, receive processed images, and handle errors.<br><br>
+
+                    4. <i><b>Displaying Results</b></i>: After processing an image, the application displays the
+                    processed result on the same page.
+                    Users can see the depth map, normal map, or text-generated image depending on the processing
+                    option chosen.<br><br>
+
+                    5. <i><b>Styling and Layout</b></i>: The user interface is designed with a modern and
+                    user-friendly approach. It incorporates
+                    responsive design using Bootstrap, ensuring that the application looks good and functions well
+                    on various screen sizes.<br><br>
+
+                    6. <i><b>Error Handling</b></i>: The application handles errors that may occur during image
+                    processing or API interactions,
+                    providing feedback to the user if something goes wrong.<br><br>
+
+                    7. <i><b>File Management</b></i>: The uploaded images and processed results are saved in the
+                    `static` folder of the application,
+                    allowing users to download them.<br><br>
+
+                    By combining Flask for backend functionality, HTML for front-end structure, and CSS for styling,
+                    we create a complete
+                    web application that offers image processing capabilities through the ClipDrop API. Users can
+                    easily upload images,
+                    choose processing options, view results, and download the processed images.</p>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about" style="background: url('../static/images/pawel-czerwinski-4-Lo8Pkxs_s-unsplash.jpg');  background-size: cover;
+          /* background-position: center; */
+          background-repeat: no-repeat;
+          background-attachment: fixed;">
+        <h1 class="heading">about me</h1>
+        <div class="row">
+            <div class="image" style="justify-content: center;">
+                <img src="../static/images/admin1.jpg" alt="" style="border-radius: 1.8rem; width: 300px;">
+
+            </div>
+            <div class="content">
+                <h3>I build things for the web.</h3>
+                <p>Hello there! Im Deepraj Bera, a dedicated and ambitious BTech student majoring in Computer Science at
+                    KIIT University.
+                    My journey in the world of technology has been marked by a profound passion for learning and a keen
+                    interest in both
+                    frontend and backend development.</p>
+                <p>As a motivated and detail-oriented programmer, I have honed my skills across various programming
+                    languages and my
+                    proficiency extends beyond the backend, as I am well-versed in frontend technologies. I bring
+                    projects to life with a
+                    creative touch, utilizing popular libraries to ensure sleek and responsive user interfaces.</p>
+                <p>My journey has led me to explore the exciting realm of AI/ML, where I have successfully implemented
+                    models using
+                    powerful tools such as TensorFlow, Pandas, and scikit-learn. Developing machine learning models is
+                    not just a skill for
+                    me; its a passion that drives me to contribute to innovative projects.</p>
+                <div style="justify-content: space-between; width: 100%;">
+                    <a href="" class="btn" style=" padding-right: 10px;"><i class="fas fa-envelope"></i></a>
+                    <a href="" class="btn" style="margin-left: 15px;;padding-right: 10px;"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="" class="btn" style="margin-left: 15px; padding-right: 10px;"><i class="fab fa-github"></i>
+                    </a>
+                    <a href="" class="btn" style="margin-left: 15px; padding-right: 10px;"><i
+                            class="fab fa-instagram"></i></a>
+
+                </div>
+
+
+            </div>
+        </div>
+        <hr>
+        <section class="footer">
+            <div class="credit">created by <span>Deepraj</span> | all rigths reserved</div>
+        </section>
+    </section>
+
+
+    <script>
+        let menu = document.querySelector('#menu-btn');
+        let navbar = document.querySelector('.navbar');
+
+        menu.onclick = () => {
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+
+        }
+
+        window.onscroll = () => {
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+
+    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
+
+    <script>
+        Shery.imageEffect("#image", { Style: 5, config: { "a": { "value": 2, "range": [0, 30] }, "b": { "value": -0.24, "range": [-1, 1] }, "zindex": { "value": -9996999, "range": [-9999999, 9999999] }, "aspect": { "value": 1.0240273178807946 }, "ignoreShapeAspect": { "value": true }, "shapePosition": { "value": { "x": 0, "y": 0 } }, "shapeScale": { "value": { "x": 0.5, "y": 0.5 } }, "shapeEdgeSoftness": { "value": 0, "range": [0, 0.5] }, "shapeRadius": { "value": 0, "range": [0, 2] }, "currentScroll": { "value": 0.016397542714976482 }, "scrollLerp": { "value": 0.07 }, "gooey": { "value": false }, "infiniteGooey": { "value": false }, "growSize": { "value": 4, "range": [1, 15] }, "durationOut": { "value": 1, "range": [0.1, 5] }, "durationIn": { "value": 1.5, "range": [0.1, 5] }, "displaceAmount": { "value": 0.5 }, "masker": { "value": true }, "maskVal": { "value": 1, "range": [1, 5] }, "scrollType": { "value": 1 }, "geoVertex": { "range": [1, 64], "value": 1 }, "noEffectGooey": { "value": true }, "onMouse": { "value": 1 }, "noise_speed": { "value": 0.2, "range": [0, 10] }, "metaball": { "value": 0.2, "range": [0, 2] }, "discard_threshold": { "value": 0.5, "range": [0, 1] }, "antialias_threshold": { "value": 0.002, "range": [0, 0.1] }, "noise_height": { "value": 0.5, "range": [0, 2] }, "noise_scale": { "value": 10, "range": [0, 100] } } })
+    </script>
+
+</body>
+
+</html>
