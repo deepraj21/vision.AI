@@ -29,8 +29,8 @@
         <div class="glass-row" style="margin-top:100px;">
     
             <form action="/depth_image" method="POST" enctype="multipart/form-data">
-                <label for="image">Select an image (JPEG only):</label>
-                <input type="file" class="form-control-file" name="image" accept=".jpg, .jpeg" required>
+                <label for="image" style="color: white; font-size: 1.3rem;">Select an image (JPEG only):</label>
+                <input type="file" class="box" name="image" accept=".jpg, .jpeg" required>
                 <input type="hidden" name="processing_type" value="depth">
                 <button type="submit" class="btn custom-upload-btn">Upload and Process</button>
             </form>

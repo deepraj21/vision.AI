@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Poppins:wght@200&family=Spline+Sans+Mono:ital,wght@1,700&display=swap');
 
-.glass-row {
+/* .glass-row {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -9,7 +9,7 @@
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   text-align: center;
   padding: 2.5rem;
-}
+} */
 
 body::-webkit-scrollbar {
   display: none;
@@ -387,6 +387,18 @@ input[type="submit"] {
 
 }
 
+.book .row2 form .box {
+  width: 100%;
+  margin: .7rem 0;
+  border-radius: .5rem;
+  border: var(--border);
+  font-size: 1.6rem;
+  color: var(--black);
+  text-transform: none;
+  padding: 1rem;
+
+}
+
 .footer .credit {
   padding: 1rem;
   padding-top: 2rem;
@@ -615,7 +627,7 @@ section {
     display: none;
   }
 
-  .home .content button {
+  .home .content #home-btn {
     display: none;
   }
 
@@ -658,10 +670,10 @@ section {
 
   }
 
-  .glass-row {
+  /* .glass-row {
     width: 98%;
     margin: auto;
-  }
+  } */
 }
 
 @media (max-width:450px) {
